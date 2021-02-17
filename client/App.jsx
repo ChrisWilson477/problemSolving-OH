@@ -11,14 +11,19 @@ export default class App extends React.Component {
     };
     this.updateItem = this.updateItem.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.getItems = this.getItems.bind(this)
   }
 
   componentDidMount() {
+    this.getItems()
+   }
+
+  getItems() {
     axios.get('/api/groceries')
     .then(res => {return res.data} )
     .then(groceryData => this.setState({gList: groceryData}))
     .catch(err => err)
-   }
+  }
 
   addItem(event) {
     let addedItem = {
@@ -26,6 +31,7 @@ export default class App extends React.Component {
     }
     axios.post('/api/groceries', addedItem)
     .then(res => {console.log(res)})
+    .then(this.getItems)
     .catch(err => err)
   }
 
