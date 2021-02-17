@@ -12,4 +12,28 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-module.exports = con;
+const getAllItems = (cb) => {
+  con.query('SELECT * FROM groceries', (err, results) => {
+    if(err){
+      cb(err)
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
+const insertItems = (groceryItem, cb) => {
+  let item = groceryItem.groceryItem
+  con.query('INSERT INTO groceries (groceryItem) VALUES (?)', item, (err, results) => {
+    if(err){
+      cb(err)
+    } else {
+      cb(null, results);
+    }
+  })
+}
+
+module.exports = {
+  getAllItems,
+  insertItems
+};
