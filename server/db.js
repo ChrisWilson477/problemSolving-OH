@@ -4,6 +4,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "HackReactor10!!",
+  database: 'groceryList'
 });
 
 con.connect(function (err) {
@@ -11,4 +12,4 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-module.exports = connection;
+module.exports = con;

@@ -1,6 +1,6 @@
-CREATE DATABASE groceryList;
+CREATE DATABASE grocerylist;
 
-USE groceryList;
+USE grocerylist;
 
 CREATE TABLE IF NOT EXISTS groceries (
   id integer AUTO_INCREMENT UNIQUE PRIMARY KEY,
