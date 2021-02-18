@@ -17,3 +17,29 @@ Goals:
 [x] Once the request-response cycle has completed successfully, update gList array in App state.
 
 [x] implement componentDidMount lifecyle method to pull in items from database each time the <App/> component mounts and render the items to the page
+
+//things I had to do:
+
+//Backend
+
+//create a schema with SQL
+//connect the schema to the DB using mysql -u root -p > schema.sql
+//make sure the create connection was properly defined
+// create queries based on what I needed from the DB
+//export queries
+
+//Express
+
+//create routes that send status codes and req/res to the DB
+//Err first call backs
+
+//Front End
+
+//create a function to perform a GET request
+//create a function to make a POST request
+//update state of whats being typed into the input bar
+//pass props into other component
+//add clickhandler function to submit button
+//fix the component map
+
+//additional: destructure props
